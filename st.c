@@ -1166,8 +1166,8 @@ execsh(void) {
 
 	if(opt_cmd)
 		prog = opt_cmd[0];
-	else if(utmp)
-		prog = utmp;
+	//else if(utmp)
+	//	prog = utmp;
 	else
 		prog = sh;
 	args = (opt_cmd) ? opt_cmd : (char *[]) {prog, NULL};
@@ -1988,8 +1988,8 @@ csihandle(void) {
 		}
 		break;
 	case 'c': /* DA -- Device Attributes */
-		if(csiescseq.arg[0] == 0)
-			ttywrite(vtiden, sizeof(vtiden) - 1);
+		//if(csiescseq.arg[0] == 0)
+		//	ttywrite(vtiden, sizeof(vtiden) - 1);
 		break;
 	case 'C': /* CUF -- Cursor <n> Forward */
 	case 'a': /* HPR -- Cursor <n> Forward */
@@ -2468,7 +2468,7 @@ tcontrolcode(uchar ascii) {
 	case 0x98:   /* TODO: SOS */
 		break;
 	case 0x9a:   /* DECID -- Identify Terminal */
-		ttywrite(vtiden, sizeof(vtiden) - 1);
+		//ttywrite(vtiden, sizeof(vtiden) - 1);
 		break;
 	case 0x9b:   /* TODO: CSI */
 	case 0x9c:   /* TODO: ST */
@@ -2537,7 +2537,7 @@ eschandle(uchar ascii) {
 		}
 		break;
 	case 'Z': /* DECID -- Identify Terminal */
-		ttywrite(vtiden, sizeof(vtiden) - 1);
+		//ttywrite(vtiden, sizeof(vtiden) - 1);
 		break;
 	case 'c': /* RIS -- Reset to inital state */
 		treset();
