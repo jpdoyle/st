@@ -3417,6 +3417,8 @@ xdraws(char *s, Glyph base, int x, int y, int charlen, int bytelen) {
 					fccharset);
 			FcPatternAddBool(fcpattern, FC_SCALABLE,
 					FcTrue);
+                        FcPatternAddBool(fcpattern, FC_COLOR,
+                                FcFalse);
 
 			FcConfigSubstitute(0, fcpattern,
 					FcMatchPattern);
